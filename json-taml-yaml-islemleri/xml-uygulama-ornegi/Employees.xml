@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<company>
+    <person>
+        <id>123</id>
+        <firstname>Berk</firstname>
+        <lastname>Safran</lastname>
+        <username>BrkSfrn</username>
+    </person>
+    <person>
+        <id>124</id>
+        <firstname>John</firstname>
+        <lastname>Due</lastname>
+        <username>JohnDoe21</username>
+    </person>
+    <person>
+        <id>125</id>
+        <firstname>Alex</firstname>
+        <lastname>De Souza</lastname>
+        <username>k!ng10</username>
+    </person>
+    <person>
+        <id>126</id>
+        <firstname>Gabriel</firstname>
+        <lastname>Batistuta</lastname>
+        <username>GabBat11</username>
+    </person>
+</company>

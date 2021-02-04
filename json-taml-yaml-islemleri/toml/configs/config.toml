@@ -1,0 +1,12 @@
+# File: config.toml - Bu bir commenttir.
+
+[database]
+server = 127.0.0.1
+port = "5432"
+database = "hr"
+user = "postgres"
+password = "1234567"
+
+# Örnek
+# [OtherSetting]
+# filePath = "./config.toml"
