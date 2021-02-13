@@ -22,6 +22,9 @@ func main() {
 		Format: "method=${method}, uri=${uri}, status=${status}\n",
 	}))
 
+	// Tanımladığımız Custom Middleware'ı kullanalım.
+	e.Use(ServerHeader)
+
 	// Echo ile GET,POST,PATCH vb. methodlarını belirleyebiliyoruz.
 	e.GET("/", mainHandler)
 
@@ -100,11 +103,12 @@ func dataHandler(c echo.Context) error {
 }
 
 // REQUEST'TE JSON KABUL ETME - "/addUser"
-// User is model of request body.
 /*
 	Dikkat! User struct'ının fieldları erişebilir olmalı.
 	Bu yüzden, baş harflerini büyük yazıyoruz.
 */
+
+// User is model of request body.
 type User struct {
 	Username string `json:"username"`
 	Name     string `json:"name"`
@@ -137,4 +141,15 @@ func addUserHandler(c echo.Context) error {
 // Group Tanımlama ve Middleware Kullanımı - "/admin/"
 func adminDashboardHandler(c echo.Context) error {
 	return c.String(200, "It is /admin/dashboard")
+}
+
+// Custom Middleware Oluşturma
+// Response Header'ına Server parametresi tanımlıyoruz.
+
+// ServerHeader is ...
+func ServerHeader(next echo.HandlerFunc) echo.HandlerFunc {
+	return func(c echo.Context) error {
+		c.Response().Header().Set(echo.HeaderServer, "Berk/v1.0")
+		return next(c)
+	}
 }
