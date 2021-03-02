@@ -1,9 +1,7 @@
 package main
 
 import (
-	"fmt"
 	log "log"
-	"time"
 
 	db "github.com/berksafran/go-url-shortener/db"
 	h "github.com/berksafran/go-url-shortener/handlers"
@@ -12,13 +10,15 @@ import (
 	"github.com/labstack/echo/v4/middleware"
 )
 
-func main() {
+func init() {
 	// Initial load .env config file.
 	err := helpers.InitializeEnvVars()
 	if err != nil {
 		log.Fatal("[ERROR]: Error loading .env file")
 	}
+}
 
+func main() {
 	// Create new Echo instance.
 	e := echo.New()
 	e.HideBanner = true
@@ -34,8 +34,6 @@ func main() {
 	ctx := db.DBClient.Ctx
 
 	log.Printf("[SERVER] DB Connection was established.\n\n")
-
-	fmt.Println(time.Now().Local().String())
 
 	// Do not forget to close connection of DB.
 	defer client.Disconnect(ctx)

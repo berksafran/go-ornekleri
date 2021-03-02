@@ -47,7 +47,7 @@ func IncreaseVisitedCounter(pathObj primitive.M) error {
 			{Key: "visitedCount", Value: 1},
 		}},
 		{Key: "$set", Value: bson.D{
-			{Key: "lastVisited", Value: time.Now().Local().String()},
+			{Key: "lastVisited", Value: time.Now().Local()},
 		}},
 	}
 
