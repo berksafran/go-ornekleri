@@ -4,6 +4,6 @@
 * logları .log dosyasına kayıt ettir.
 * customPath yazma seçeneği.
     * Register/Login olması gerek.
-    * URL Link silme.
+    * Belirli bir süreden sonra otomatik URL Link silme.
 * Error helper function yarat. Çok duplicated kod var.    
 

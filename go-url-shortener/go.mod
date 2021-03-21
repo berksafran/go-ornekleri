@@ -7,5 +7,6 @@ require (
 	github.com/go-ozzo/ozzo-validation v3.6.0+incompatible
 	github.com/joho/godotenv v1.3.0
 	github.com/labstack/echo/v4 v4.2.0
+	github.com/spf13/viper v1.7.1
 	go.mongodb.org/mongo-driver v1.4.6
 )

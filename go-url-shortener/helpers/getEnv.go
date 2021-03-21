@@ -13,9 +13,9 @@ func InitializeEnvVars() error {
 }
 
 // GetEnv returns a variable on env config file.
-func GetEnv(env string) string {
-	result := os.Getenv(env)
-	return result
+func GetEnv(key string) string {
+	value := os.Getenv(key)
+	return value
 }
 
 // GetEnvMany returns two variables on env config file.

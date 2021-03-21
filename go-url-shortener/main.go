@@ -5,7 +5,7 @@ import (
 
 	db "github.com/berksafran/go-url-shortener/db"
 	h "github.com/berksafran/go-url-shortener/handlers"
-	helpers "github.com/berksafran/go-url-shortener/helpers"
+	"github.com/berksafran/go-url-shortener/helpers"
 	"github.com/labstack/echo/v4"
 	"github.com/labstack/echo/v4/middleware"
 )
@@ -45,6 +45,9 @@ func main() {
 	e.GET("/", h.MainHandler)
 	e.POST("/add", h.AddURLHandler)
 	e.GET("/:path", h.RedirectURLHandler)
+
+	// AUTH handlers
+	e.POST("/register", h.RegisterHandler)
 
 	// Start server.
 	e.Start(":1234")
